@@ -95,7 +95,7 @@
           </li>
           <li>
             <a
-              @click="logout"
+              @click="logout()"
               class="cursor-pointer rounded-b bg-white hover:bg-gray-100 hover:text-yellow-700 py-2 px-4 block whitespace-no-wrap"
             >
               Logout
