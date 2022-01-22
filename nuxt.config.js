@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bwastartup-frontend',
+    title: 'BWA Startup',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -44,12 +44,35 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/auth-next',
   ],
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'data.token',
+          global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'data',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/api/v1/sessions', method: 'post' },
+          logout: false,
+          user: { url: '/api/v1/users/fetch', method: 'get' },
+        },
+      },
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'http://localhost:8080/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
