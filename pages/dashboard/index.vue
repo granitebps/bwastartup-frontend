@@ -50,7 +50,7 @@
             "
           ></div>
           <nuxt-link
-            :to="'/dashboard/projects' + campaign.id"
+            :to="'/dashboard/projects/' + campaign.id"
             class="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-8 flex flex-col justify-between leading-normal"
           >
             <div class="mb-8">
